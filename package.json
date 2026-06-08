@@ -1,1 +1,12 @@
-
+{
+  "name": "gamified-website",
+  "version": "1.0.0",
+  "description": "একটি গ্যামিফাইড ওয়েবসাইট",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

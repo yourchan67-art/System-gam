@@ -9,6 +9,22 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    position: relative;
+}
+
+/* ডিজিটাল গ্রিড ব্যাকগ্রাউন্ডের জন্য */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    z-index: -1;
 }
 
 .container {
@@ -44,7 +60,8 @@ h1 {
     height: 100%;
     border: 3px solid rgba(0, 229, 255, 0.5);
     border-radius: 50%;
-    box-shadow: 0 0 15px #00e5ff;
+    box-shadow: 0 0 20px #00e5ff;
+    animation: spin-cw 15s linear infinite;
 }
 
 .inner-ring {
@@ -53,14 +70,14 @@ h1 {
     height: 80%;
     border: 2px dashed #00e5ff;
     border-radius: 50%;
-    animation: spin 20s linear infinite;
+    animation: spin-ccw 20s linear infinite;
 }
 
 .center-text {
     font-size: 22px;
     font-weight: bold;
     color: #ffffff;
-    text-shadow: 0 0 10px #00e5ff;
+    text-shadow: 0 0 15px #00e5ff;
 }
 
 .subtitle {
@@ -78,7 +95,12 @@ h1 {
     padding-top: 10px;
 }
 
-@keyframes spin {
+@keyframes spin-cw {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-ccw {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
     }
